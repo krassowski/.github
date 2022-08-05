@@ -1,0 +1,97 @@
+name: "\U0001F41B Bug report"
+description: Create a report to help us repair something that is currently broken
+labels: ["bug", "status:Needs Triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Thank you for contributing.
+
+        Before creating a new issue:
+        * Search for relevant issues
+        * Follow the [issue reporting guidelines](https://jupyterlab.readthedocs.io/en/latest/getting_started/issue.html)
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug clearly and concisely. Include screenshots if possible.
+      placeholder: Please tell us what is not working.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduce
+      description: Describe step-by-step instructions to reproduce the behavior
+      placeholder: Please tell us how to reproduce this bug.
+      value: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error '...'
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what you expected to happen
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: Operating System and version
+      description: "Which operating system do you use? Please provide the version as well."
+      placeholder: "Linux Ubuntu 22.04"
+    validations:
+      required: false
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      description: "Which browser do you use? Please provide the version as well."
+      placeholder: "Chrome 92"
+    validations:
+      required: false
+  - type: input
+    id: jupyterlab
+    attributes:
+      label: JupyterLab version
+      description: "Which version of Jupyterlab do you use?"
+      placeholder: "3.3.7"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any other relevant context.
+    validations:
+      required: false
+  - type: textarea
+    id: troubleshoot-output
+    attributes:
+      label: Troubleshoot Output
+      description: |
+        Paste the output from running `jupyter troubleshoot` from the command line here.
+        You may want to sanitize the paths in the output.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: command-line-output
+    attributes:
+      label: Command Line Output
+      description: Paste the output from your command line running `jupyter lab` here, use `--debug` if possible.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: browser-output
+    attributes:
+      label: Browser Output
+      description: See https://webmasters.stackexchange.com/a/77337 for how to access the JavaScript console. Paste the output from your browser Javascript console here, if applicable.
+      render: javascript
+    validations:
+      required: false
